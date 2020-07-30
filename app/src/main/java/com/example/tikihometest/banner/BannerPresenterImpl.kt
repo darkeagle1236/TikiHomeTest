@@ -5,16 +5,16 @@ import com.example.tikihometest.model.banner.BannerResponse
 class BannerPresenterImpl(var iView:BannerContract.BannerView):BannerContract.BannerPresenter,OnGetBannerListFinishListener {
     var iModel = BannerModel()
     override fun getBanner() {
-        iView.showProgress()
+        iView.showBannerProgress()
         iModel.callGetBannerApi(this)
     }
 
     override fun onSuccess(response: BannerResponse) {
-        iView.showResults(response)
-        iView.hideProgress()
+        iView.showBannerResult(response)
+        iView.hideBannerProgress()
     }
 
     override fun onFailure() {
-        iView.hideProgress()
+        iView.hideBannerProgress()
     }
 }

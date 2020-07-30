@@ -1,19 +1,19 @@
 package com.example.tikihometest.quicklink
 
-import com.example.tikihometest.banner.OnGetBannerListFinishListener
-import com.example.tikihometest.model.quicklink.QuickLinkResponse
+import com.example.tikihometest.model.quicklink.Data
 
 interface QuickLinkContract {
     interface QuickLinkView{
-        fun showProgress()
-        fun hideProgress()
-        fun showResults(response: QuickLinkResponse)
+        fun showQuickLinkProgress()
+        fun hideQuickLinkProgress()
+        fun showQuickLinkResult(dataList: List<Data>)
         fun initQuickLinkPresenter()
+        fun initQuickLinkRcv()
     }
     interface QuickLinkPresenter{
-        fun callGetQuickLinkList(onGetBannerListFinishListener: OnGetBannerListFinishListener)
+        fun callGetQuickLinkList()
     }
     interface QuickLinkModel{
-        fun getQuickLinkList()
+        fun getQuickLinkList(onGetQuickLinkListFinishListener: OnGetQuickLinkListFinishListener)
     }
 }

@@ -4,10 +4,11 @@ import com.example.tikihometest.model.banner.BannerResponse
 
 interface BannerContract {
     interface BannerView{
-        fun showProgress()
-        fun hideProgress()
-        fun showResults(response: BannerResponse)
-        fun initPresenter()
+        fun showBannerProgress()
+        fun hideBannerProgress()
+        fun showBannerResult(response: BannerResponse)
+        fun initBannerPresenter()
+        fun initBannerRcv()
     }
     interface BannerModel{
         fun callGetBannerApi(onGetBannerListFinishListener: OnGetBannerListFinishListener)
