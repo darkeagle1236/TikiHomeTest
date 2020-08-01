@@ -11,7 +11,7 @@
         android:layout_centerHorizontal="true"/>
 
     <ImageView
-        android:id="@+id/sale_sticker"
+        android:id="@+id/iv_sale_sticker"
         android:layout_width="32dp"
         android:layout_height="16dp"
         android:layout_alignParentEnd="true"
@@ -25,10 +25,10 @@
         android:textSize="12sp"
         android:gravity="center"
         android:textColor="@color/white"
-        android:layout_alignTop="@id/sale_sticker"
-        android:layout_alignBottom="@id/sale_sticker"
-        android:layout_alignLeft="@id/sale_sticker"
-        android:layout_alignRight="@id/sale_sticker"
+        android:layout_alignTop="@id/iv_sale_sticker"
+        android:layout_alignBottom="@id/iv_sale_sticker"
+        android:layout_alignLeft="@id/iv_sale_sticker"
+        android:layout_alignRight="@id/iv_sale_sticker"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"/>
 
@@ -41,7 +41,27 @@
         android:layout_below="@+id/iv_image"
         android:layout_margin="8dp"/>
     <ProgressBar
+        android:id="@+id/sale_progress_bar"
         android:layout_width="match_parent"
-        android:layout_height="16dp"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/tv_price"
+        android:progressDrawable="@drawable/green_progress_drawable"
+        android:layout_margin="8dp"
         />
+    <TextView
+        android:id="@+id/tv_sale_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/sale_progress_bar"
+        android:layout_alignBottom="@id/sale_progress_bar"
+        android:layout_alignLeft="@id/sale_progress_bar"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:text="Vừa mở bán"
+        android:layout_alignRight="@id/sale_progress_bar"
+        />
+
 </RelativeLayout>

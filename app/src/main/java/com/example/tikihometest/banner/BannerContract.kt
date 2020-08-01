@@ -1,6 +1,7 @@
 package com.example.tikihometest.banner
 
 import com.example.tikihometest.model.banner.BannerResponse
+import retrofit2.Response
 
 interface BannerContract {
     interface BannerView{
@@ -11,9 +12,9 @@ interface BannerContract {
         fun initBannerRcv()
     }
     interface BannerModel{
-        fun callGetBannerApi(onGetBannerListFinishListener: OnGetBannerListFinishListener)
+        suspend fun callGetBannerApi():Response<BannerResponse>
     }
     interface BannerPresenter{
-        fun getBanner()
+        suspend fun getBanner():Response<BannerResponse>
     }
 }

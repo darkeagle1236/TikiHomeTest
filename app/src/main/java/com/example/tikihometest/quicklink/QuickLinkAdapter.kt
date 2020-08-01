@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tikihometest.R
 import com.example.tikihometest.model.quicklink.Data
-import com.example.tikihometest.model.quicklink.QuickLinkResponse
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.layout_item_quick_link.view.*
 

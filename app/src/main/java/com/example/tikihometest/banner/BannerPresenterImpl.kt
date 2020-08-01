@@ -1,12 +1,13 @@
 package com.example.tikihometest.banner
 
 import com.example.tikihometest.model.banner.BannerResponse
+import retrofit2.Response
 
 class BannerPresenterImpl(var iView:BannerContract.BannerView):BannerContract.BannerPresenter,OnGetBannerListFinishListener {
     var iModel = BannerModel()
-    override fun getBanner() {
+    override suspend fun getBanner():Response<BannerResponse> {
         iView.showBannerProgress()
-        iModel.callGetBannerApi(this)
+        return iModel.callGetBannerApi()
     }
 
     override fun onSuccess(response: BannerResponse) {

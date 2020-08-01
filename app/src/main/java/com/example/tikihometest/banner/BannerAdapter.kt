@@ -1,6 +1,8 @@
 package com.example.tikihometest.banner
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +11,7 @@ import com.example.tikihometest.R
 import com.example.tikihometest.model.banner.Data
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.layout_item_banner.view.*
+
 
 class BannerAdapter(
     var bannerList: List<Data>,
@@ -30,7 +33,12 @@ class BannerAdapter(
         holder: BannerHolder,
         position: Int
     ) {
-        Picasso.get().load(bannerList[position].mobile_url).into(holder.iv_banner);
+        Picasso.get().load(bannerList[position].mobile_url).into(holder.iv_banner)
+        holder.itemView.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(bannerList[position].url)
+            context.startActivity(i)
+        }
     }
 
     override fun getItemCount(): Int {

@@ -1,4 +1,4 @@
-package com.example.tikihometest.model.hotdeals
+package com.example.tikihometest.model.flashdeal
 
 data class Progress(
     val percent: Double,

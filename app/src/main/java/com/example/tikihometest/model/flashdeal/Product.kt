@@ -1,4 +1,5 @@
-package com.example.tikihometest.model.hotdeals
+package com.example.tikihometest.model.flashdeal
+
 
 data class Product(
     val badges: List<Badge>,

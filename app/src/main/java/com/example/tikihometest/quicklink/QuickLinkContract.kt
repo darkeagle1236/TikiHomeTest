@@ -1,6 +1,8 @@
 package com.example.tikihometest.quicklink
 
 import com.example.tikihometest.model.quicklink.Data
+import com.example.tikihometest.model.quicklink.QuickLinkResponse
+import retrofit2.Response
 
 interface QuickLinkContract {
     interface QuickLinkView{
@@ -11,9 +13,10 @@ interface QuickLinkContract {
         fun initQuickLinkRcv()
     }
     interface QuickLinkPresenter{
-        fun callGetQuickLinkList()
+        suspend fun callGetQuickLinkList():List<Data>
+        fun sortQuickLinkList(unSortedQuickLinkResponse: QuickLinkResponse):List<Data>
     }
     interface QuickLinkModel{
-        fun getQuickLinkList(onGetQuickLinkListFinishListener: OnGetQuickLinkListFinishListener)
+        suspend fun getQuickLinkList():Response<QuickLinkResponse>
     }
 }
